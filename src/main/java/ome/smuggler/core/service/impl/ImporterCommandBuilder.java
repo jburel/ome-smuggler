@@ -75,7 +75,9 @@ public class ImporterCommandBuilder implements CommandBuilder {
         URI omero = importArgs.getOmeroHost();
         return arg("-s", omero.getHost(), 
                    "-p", String.valueOf(omero.getPort()), 
-                   SessionKeySwitch, importArgs.getSessionKey());
+                   //SessionKeySwitch, importArgs.getSessionKey());
+                   "-u", "importer",
+                   "-w", "abc123");
     }
     
     private ListProgramArgument<String> name() {
